@@ -1,5 +1,9 @@
 import requests
 
-data = {}
-result = requests.get('http://localhost:5000/addTree', json=data)
-print(result)
+def sendBranch(treeID, color, width, height):
+	data = {'color': color,
+			'width': width,
+			'height': height}
+
+	url = 'http://localhost:5000/addBranch/' + str(treeID)
+	result = requests.post(url, json=data)
