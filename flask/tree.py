@@ -8,4 +8,3 @@ class Tree:
         self.rotation = rotation
         self.balls = balls
         self.star = star
-    
