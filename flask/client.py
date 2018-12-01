@@ -1,6 +1,11 @@
-import sys
-import json
-import requests
+from tkinter import *
+import tree.py
 
-trees = requests.get("http://localhost:5000/trees").json()
-print(trees)
+master = Tk()
+
+w = Canvas(master, width=200, height=100)
+w.pack()
+
+
+
+mainloop()
