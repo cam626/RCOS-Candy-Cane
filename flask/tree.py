@@ -5,7 +5,8 @@ class Tree:
         self.background = "white"
         self.ornaments = []
         self.trunk = None
-    
+        self.lights = []
+
 class Branch:
     def __init__(self):
         self.color = "green"
@@ -24,3 +25,7 @@ class Ornaments:
 class Trunk:
     def __init__(self):
         self.color = "brown"
+
+class Lights:
+    def __init__(self):
+        self.color = "yellow"
