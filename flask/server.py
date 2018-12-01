@@ -1,11 +1,7 @@
 from flask import Flask, request
+from tree.py import Tree
 app = Flask(__name__)
 import json
-
-class Tree(object):
-	def __init__(self, name, color):
-		self.name = name
-		self.color = color
 
 trees = []
 
