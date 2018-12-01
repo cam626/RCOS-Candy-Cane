@@ -5,12 +5,14 @@ class Tree:
         self.background = "white"
         self.ornaments = []
         self.trunk = Trunk()
+        self.lights = []
 
     def jsonify(self):
         result = {"branches": self.jsonList(self.branches),
                     "topper": self.topper.jsonify(),
                     "background": self.background,
                     "ornaments": self.jsonList(self.ornaments),
+                    "lights": self.jsonList(self.lights),
                     "trunk": self.trunk.jsonify()}
         return result
 
@@ -19,6 +21,9 @@ class Tree:
 
     def addOrnament(self, color, x, y, width, height):
         self.ornaments.append(Ornament(color, x, y, width, height))
+
+    def addLight(self, color, x, y, width, height):
+        self.lights.append(Lights(color, x, y, width, height))
 
     def jsonList(self, l):
         list_json = "["
@@ -50,6 +55,19 @@ class Topper:
         return res
 
 class Ornament:
+    def __init__(self, color="red", x=0, y=0, width=25, height=25):
+        self.color = color
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+
+    def jsonify(self):
+        res = "{color:" + self.color + ", x:" + str(self.x) + \
+                ", y:" + str(self.y) + ", width:" + str(self.width) + ", height:" + str(self.height) + "}"
+        return res
+
+class Light:
     def __init__(self, color="red", x=0, y=0, width=25, height=25):
         self.color = color
         self.x = x

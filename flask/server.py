@@ -49,6 +49,17 @@ def addOrnament(treeID):
 	trees[treeID].addOrnament(color, x, y, width, height)
 	return "Yes"
 
+@app.route('/modify/addLight/<int:treeID>', methods=["POST"])
+def addLight(treeID):
+	input_json = request.get_json(force=True)
+	color = input_json['color']
+	width = int(input_json['width'])
+	height = int(input_json['height'])
+	y = int(input_json['y'])
+	x = int(input_json['x'])
+	trees[treeID].addLight(color, x, y, width, height)
+	return "Yes"
+
 @app.route('/modify/trunk/<int:treeID>', methods=["POST"])
 def changeTrunk(treeID):
 	input_json = request.get_json(force=True)
