@@ -8,6 +8,7 @@ class Tree:
         self.lights = []
 
     def jsonify(self):
+        print(self.branches)
         result = {"branches": self.jsonList(self.branches),
                     "topper": self.topper.jsonify(),
                     "background": self.background,
@@ -31,7 +32,7 @@ class Tree:
             list_json += item.jsonify()
         list_json += "]"
         return list_json
-    
+
 class Branch:
     def __init__(self, color="green", x=0, y=0, width=100, height=50):
         self.color = color

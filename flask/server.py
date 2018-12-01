@@ -19,7 +19,6 @@ def getTrees():
 def addTree():
 	newTree = Tree()
 	id = max(list(trees.keys()) or [0]) + 1
-	print(id)
 	trees[id] = newTree
 	return str(id)
 
@@ -72,14 +71,14 @@ def changeTrunk(treeID):
 	return "Yes"
 
 @app.route('/modify/background/<int:treeID>', methods=["POST"])
-def changeTrunk(treeID):
+def changeBackground(treeID):
 	input_json = request.get_json(force=True)
 	color = input_json['color']
 	trees[treeID].background = color
 	return "Yes"
 
 @app.route('/modify/topper/<int:treeID>', methods=["POST"])
-def changeTrunk(treeID):
+def changeTopper(treeID):
 	input_json = request.get_json(force=True)
 	type = input_json['type']
 	color = input_json['color']
